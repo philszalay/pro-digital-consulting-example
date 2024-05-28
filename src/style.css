@@ -1,3 +1,8 @@
+:root {
+    --margin-content: 32px;
+    --gap: 24px;
+}
+
 html,
 body {
     overscroll-behavior: none;
@@ -6,19 +11,72 @@ body {
     padding: 0;
 }
 
-
 .webgl {
     width: 100vw;
     height: 100vh;
 }
 
-.footer {
+.flex {
     display: flex;
-    flex-direction: row-reverse;
-    z-index: 1;
-    position: fixed;
-    right: 1em;
-    bottom: 1em;
-    width: 100%;
-    color: white;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
 }
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+}
+
+.texture-menu {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: var(--margin-content);
+}
+
+.texture-menu-item {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.dimension-menu {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: var(--margin-content);
+}
+
+.dimension-menu-item-input input {
+    width: 75px;
+}
+
+.dimension-menu-item-input::after {
+    display: inline-block;
+    position: relative;
+    right: 2em;
+    transition: all .05s ease-in-out;
+    content: 'cm';
+}
+
+.dimension-menu-item-input:hover::after,
+.dimension-menu-item-input:focus-within::after {
+  right: 3em;
+}
+
+/* handle Firefox (arrows always shown) */
+@supports (-moz-appearance:none) {
+    .dimension-menu-item-input::after {
+    right: 1.5em;
+  }
+}
+    
+

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://philszalay.github.io/threejs-boilerplate/",
+  "homepage": "https://philszalay.github.io/pro-digital-consulting-example/",
   "scripts": {
     "build": "webpack --mode=production --config ./bundler/webpack.prod.js",
     "buildForGithub": "webpack --mode=production --env github=true --config ./bundler/webpack.prod.js",
@@ -29,11 +29,13 @@
     "webpack-merge": "^5.7.3"
   },
   "devDependencies": {
-    "eslint": "^8.18.0",
+    "@eslint/js": "^9.3.0",
+    "eslint": "^9.3.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.3",
     "eslint-plugin-promise": "^6.0.0",
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "globals": "^15.3.0"
   }
 }
