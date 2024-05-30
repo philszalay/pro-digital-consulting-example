@@ -14,6 +14,7 @@ import woodTexture2Roughness from '../assets/textures/wood_texture_2_roughness.j
 
 export default class ThreeJsDraft {
   constructor() {
+
     // Variables
     this.canvas = document.querySelector('canvas.webgl');
     this.width = window.innerWidth;
@@ -41,8 +42,6 @@ export default class ThreeJsDraft {
     // Camera
     this.camera = new THREE.PerspectiveCamera(75, this.width / this.height, 0.1, 1000);
     this.camera.position.z = 12;
-
-    this.camera.lookAt(new THREE.Vector3(0, 0, 0)); // Make sure the camera is looking at the center of the scene
 
     // Renderer
     this.renderer = new THREE.WebGLRenderer({
@@ -90,6 +89,8 @@ export default class ThreeJsDraft {
       console.log('There was an error loading ' + url);
     };
 
+    this.textureLoader = new THREE.TextureLoader(this.loadingManager);
+
     // Helpers
     this.addHelpers();
 
@@ -134,7 +135,7 @@ export default class ThreeJsDraft {
 
   loadTexture(url) {
     return new Promise((resolve, reject) => {
-      new THREE.TextureLoader().load(url, resolve, undefined, reject);
+      this.textureLoader.load(url, resolve, undefined, reject);
     });
   }
 
@@ -181,9 +182,7 @@ export default class ThreeJsDraft {
     pointLight3.position.set(1, 10, -5);
     pointLight4.position.set(-2, -10, 3);
 
-    this.scene.add(pointLight1, pointLight2, pointLight3, pointLight4);
-
-    this.scene.add(this.box);
+    this.scene.add(this.box, pointLight1, pointLight2, pointLight3, pointLight4);
   }
 
   updateBoxGeometry() {
@@ -290,7 +289,6 @@ export default class ThreeJsDraft {
   }
 }
 
-// Create ThreeJsDraft
 const draft = new ThreeJsDraft();
 
 window.changeWoodTexture = async function (key) {
