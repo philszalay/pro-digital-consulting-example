@@ -1,7 +1,7 @@
 # Three.js Boilerplate
 
 <img width="1280" alt="Screenshot 2024-05-30 at 10 54 30" src="https://github.com/philszalay/pro-digital-consulting-example/assets/12916001/dd079ff1-f304-4b21-9d15-fb77e48098ce">
-[https://philszalay.github.io/threejs-boilerplate/](https://philszalay.github.io/pro-digital-consulting-example/)
+https://philszalay.github.io/threejs-boilerplate/
 
 ## Setup
 Download [Node.js 16](https://nodejs.org/en/download/).
