@@ -1,7 +1,7 @@
 # Three.js Boilerplate
 
-<img width="1280" alt="Screenshot 2022-08-08 at 23 06 55" src="https://user-images.githubusercontent.com/12916001/183514700-a881ec3f-4044-4e52-8277-c18817373f33.png">
-https://philszalay.github.io/threejs-boilerplate/
+<img width="1280" alt="Screenshot 2024-05-30 at 10 54 30" src="https://github.com/philszalay/pro-digital-consulting-example/assets/12916001/dd079ff1-f304-4b21-9d15-fb77e48098ce">
+[https://philszalay.github.io/threejs-boilerplate/](https://philszalay.github.io/pro-digital-consulting-example/)
 
 ## Setup
 Download [Node.js 16](https://nodejs.org/en/download/).
@@ -26,13 +26,6 @@ npm install gh-pages --save-dev
 ```
 
 For more information see: https://www.npmjs.com/package/gh-pages
-
-### Adjustments
-To load images and other assets after deploying some adjustments are necessary.
-
-⋅ Change the homepage link (https://philszalay.github.io/threejs-boilerplate/) in your `package.json` to your gh-pages link.
-
-⋅ In `webpack.common.js` change the `output.publicPath` property (/threejs-boilerplate/) to your path fragment for production mode.
 
 ### Deployment Script
 To deploy your changes use the predefined deploy script. 
